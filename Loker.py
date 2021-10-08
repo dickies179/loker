@@ -5,6 +5,7 @@ Dibuat Pada : 13-oct-20
 Jam         : 16:33:50
 Author      : Diki Hermawan
 #Note       : Making with emosion :v
+Update      : 08-oct-2021
 '''
 
 import requests as r, json, sys, os
