@@ -8,8 +8,8 @@ Author      : Diki Hermawan
 Update      : 08-oct-2021
 '''
 
-import requests as r, json, sys, os
-from time import sleep
+import requests as r, sys, os
+from time import sleep as s
 from bs4 import BeautifulSoup as bs
 
 c = r.Session ()
@@ -89,13 +89,22 @@ def Link_Serang(x):
         os.system("xdg-open"+cari)
         
 def main ():
+  s(1)
   print (CEND+"\nDaftar Web Loker:\n[1] SerangKab.info\n[2] SerangId\n")
-  sleep (1)
-  pilihan = input(CBLUE+"Masukan "+CRED+"Pilihan : ")
-  sleep(1)
+  s (1)
+  pilihan = int(input(CBLUE+"Masukan "+CRED+"Pilihan : "))
+  s(1)
   os.system ("clear")
-  Isi_Kab (int (pilihan))
-  Link_Kab (int(pilihan))
+  if pilihan == 1:
+    Loker_Kab()
+    if Loker_Kab() == pilihan:
+      Isi_Kab()
+  elif pilihan == 2:
+    Loker_Serang(Link_Serang(pilihan))
+  #Isi_Kab (int (pilihan))
+  #Link_Kab (int(pilihan))
+  #Loker_Kab()
+  #Loker_Serang()
     
 
 main()
